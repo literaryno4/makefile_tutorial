@@ -22,5 +22,6 @@ $(ODIR)/%.o: %.c
 $(PROGRAM): $(patsubst %, $(ODIR)/%,$(addsuffix .o,$(PROGRAM))) $(DEPS)
 	$(CC) -o $@ $(ODIR)/$@.o $(DEPS) 
 
+.PHONY: clean
 clean: 
 	rm $(ODIR)/*.o $(PROGRAM)
